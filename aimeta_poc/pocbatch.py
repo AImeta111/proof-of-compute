@@ -13,8 +13,6 @@ with the root in the anchored tx's data field. Cost per receipt → ~zero.
 Usage:  pocbatch.py receipt1.json receipt2.json …
 """
 import hashlib, json, os, sys, time
-from web3 import Web3
-from eth_account import Account
 
 import os as _os
 _MAINNET = _os.environ.get("AIMETA_CHAIN", "testnet") == "mainnet"
@@ -49,6 +47,8 @@ def build_tree(leaves):
 
 
 def main():
+    from web3 import Web3
+    from eth_account import Account
     paths = sys.argv[1:]
     if len(paths) < 2:
         sys.exit("give ≥2 receipts")

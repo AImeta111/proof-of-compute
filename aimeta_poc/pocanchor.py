@@ -10,8 +10,6 @@ Usage:  ./.venv/bin/python pocanchor.py receipt-002.json
 Key:    ~/.aimeta/bsc-testnet.key  (testnet only — no real value)
 """
 import json, os, sys, time
-from web3 import Web3
-from eth_account import Account
 
 import os as _os
 _MAINNET = _os.environ.get("AIMETA_CHAIN", "testnet") == "mainnet"
@@ -21,6 +19,8 @@ CHAIN_NAME = "bsc" if _MAINNET else "bsc-testnet"
 EXPLORER = "https://bscscan.com" if _MAINNET else "https://testnet.bscscan.com"
 
 def main():
+    from web3 import Web3
+    from eth_account import Account
     path = sys.argv[1]
     receipt = json.load(open(path))
     rhash = receipt["receipt_hash"].split(":", 1)[1]

@@ -16,8 +16,6 @@ Usage:  poccrust.py receipt.json [more.json …]
 import base64, json, os, sys
 import urllib.request
 
-from eth_account import Account
-from eth_account.messages import encode_defunct
 
 GATEWAYS = [
     "https://gw.crustfiles.app",
@@ -71,6 +69,8 @@ def pin(cid, name, auth):
 
 
 def main():
+    from eth_account import Account
+    from eth_account.messages import encode_defunct
     auth = auth_header()
     for path in sys.argv[1:]:
         receipt = json.load(open(path))
