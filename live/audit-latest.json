@@ -1,0 +1,17 @@
+{
+ "schema": "aimeta.poc.audit.v0",
+ "audited_at": "2026-09-07T13:36:13Z",
+ "auditor": "github-actions:continuous-audit",
+ "results": [
+  {
+   "file": "live/receipt-fluence-latest.json",
+   "static_checks": true
+  },
+  {
+   "file": "live/receipt-github-latest.json",
+   "static_checks": true,
+   "replay": true
+  }
+ ],
+ "all_passed": true
+}
