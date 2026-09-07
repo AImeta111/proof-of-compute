@@ -1,0 +1,44 @@
+name: continuous-audit
+on:
+  schedule:
+    - cron: "47 2,8,14,20 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip -q install cryptography
+      - name: verify every live receipt (signature + integrity; replay own-runnable jobs)
+        run: |
+          python - << 'PY'
+          import glob, json, subprocess, time
+          results = []
+          for f in sorted(glob.glob("live/receipt-*.json")):
+              p = subprocess.run(["python", "pocv.py", f], capture_output=True, text=True)
+              ok = p.returncode == 0
+              entry = {"file": f, "static_checks": ok}
+              if ok and "github-actions" in json.load(open(f)).get("provider", ""):
+                  r = subprocess.run(["python", "pocv.py", f, "--replay"],
+                                     capture_output=True, text=True)
+                  entry["replay"] = r.returncode == 0
+              results.append(entry)
+          audit = {"schema": "aimeta.poc.audit.v0",
+                   "audited_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                   "auditor": "github-actions:continuous-audit",
+                   "results": results,
+                   "all_passed": all(e["static_checks"] and e.get("replay", True) for e in results)}
+          json.dump(audit, open("live/audit-latest.json", "w"), indent=1)
+          print(json.dumps(audit, indent=1))
+          PY
+      - name: commit
+        run: |
+          git config user.name "aimeta-audit"
+          git config user.email "audit@aimeta.network"
+          git add live/audit-latest.json
+          git commit -m "audit: $(date -u +%FT%TZ)" || echo "no changes"
+          git push

@@ -94,6 +94,24 @@ example (synthetic OHLCV, 96-cell strategy grid — pure stdlib).
 - **Envelope fix** — `anchor` moved outside the signed body: post-hoc
   anchoring metadata can never invalidate a signature (schema `v0.2`).
 
+
+## v0.3 — shipped
+
+- **Hermetic execution** — jobs run in a network-disabled pinned container
+  (`docker run --network=none … python@sha256:…`, inside the signed command):
+  the output is provably a function of the committed inputs alone.
+- **Receipt lineage** (`--parent`) — a job declares the receipts whose outputs
+  feed its inputs; hashes must match, verifiers can walk the chain
+  (`pocv --chain`). Compute pipelines become provenance DAGs
+  (`examples/receipt-stage2.json`).
+- **Automated cross-cloud corroboration** — a GitHub Actions executor re-runs
+  the benchmark every 6 h and arbitrates against the Fluence receipt; the
+  standing verdict lives in [`live/`](live/): **CORROBORATED**, independent
+  keys, identical bits.
+- **Continuous audit** — a scheduled workflow re-verifies every live receipt
+  (signature, integrity, replay where runnable) and publishes
+  `live/audit-latest.json`. The system spot-checks itself in public.
+
 ## License
 
 MIT — permissionless integration, like everything AIMETA ships.

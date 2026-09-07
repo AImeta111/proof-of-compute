@@ -42,6 +42,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("receipt")
     ap.add_argument("--replay", action="store_true")
+    ap.add_argument("--chain", action="append", default=[],
+                    help="parent receipt file(s) to verify lineage against")
     args = ap.parse_args()
 
     receipt = json.load(open(args.receipt))
@@ -67,6 +69,20 @@ def main():
     print(f"  job     : {' '.join(body['job']['cmd'])}")
     print(f"  ran on  : {body['env']['host']} ({body['provider']})")
     print(f"  wall    : {body['run']['wall_seconds']}s · exit {body['run']['exit_code']}")
+
+    lin = body.get("lineage", {}).get("parents", [])
+    if lin:
+        for p in lin:
+            print(f"  parent  : {p['parent_receipt_hash'][:30]}… via {p['links'][0]['file']}")
+        for pf in args.chain:
+            parent = json.load(open(pf))
+            pouts = set(parent.get("output", {}).get("files", {}).values())
+            for p in lin:
+                if p["parent_receipt_hash"] == parent.get("receipt_hash"):
+                    ok = all(l["hash"] in pouts for l in p["links"])
+                    print(("✔" if ok else "✘") + f" lineage: inputs match outputs of {pf}")
+                    if not ok:
+                        sys.exit("✘ lineage broken")
 
     # 3. replay
     if args.replay:

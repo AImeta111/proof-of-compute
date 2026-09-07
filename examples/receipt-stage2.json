@@ -1,0 +1,80 @@
+{
+  "schema": "aimeta.poc.v0.3",
+  "job": {
+    "cmd": [
+      "sudo",
+      "docker",
+      "run",
+      "--rm",
+      "--network=none",
+      "-v",
+      "/home/ubuntu:/w",
+      "-w",
+      "/w",
+      "python@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea",
+      "python",
+      "analyze_results.py"
+    ],
+    "inputs": {
+      "grid_results.json": "sha256:bb2f3cccfb7d469c601b457a9aece2dd715175e46b212eca51e2d7845a5c3e15",
+      "analyze_results.py": "sha256:dcc8bd0401de004d3b91c29af12c248f4c45a73a3b1645475ab3dd8cdc85d0c5"
+    }
+  },
+  "env": {
+    "host": "fluence",
+    "machine": "x86_64",
+    "cpu_count": 2,
+    "os": "Linux 6.8.0-138-generic",
+    "python": "3.12.3"
+  },
+  "run": {
+    "started_at": "2026-09-07T13:29:05+00:00",
+    "wall_seconds": 1.017,
+    "exit_code": 0
+  },
+  "output": {
+    "files": {
+      "best_strategy.json": "sha256:41ce02dfb8666b1a23a0b4fd53b7c6882511c64eeac8e2b967895927bd5e3907"
+    },
+    "stdout": "sha256:bc0a35049ad85930a96059755f7cfb9b1beffbcb599461f6ded3b20fc4756ac4"
+  },
+  "provider": "fluence:cpu-shared-2c-2g:FRA",
+  "signer_pubkey": "ed25519:69975af374bef5cdf41c86fc44d7d5ec740bc6da83fa258d3c884158797ef18d",
+  "lineage": {
+    "parents": [
+      {
+        "parent_receipt_hash": "sha256:63b0f11fd2900a8b12d5b45e2e11ccae1944f24017c7faeef21038e897f528a2",
+        "links": [
+          {
+            "file": "grid_results.json",
+            "hash": "sha256:bb2f3cccfb7d469c601b457a9aece2dd715175e46b212eca51e2d7845a5c3e15"
+          }
+        ]
+      }
+    ]
+  },
+  "signature": "ed25519:3ba9e5b2a3cf773157a8565edf6f2908c4318a97a6179329c9b7a6086b557b5f31c61108df93079cef5c991708f24996aad02b86651175b7bda249eb14ad910d",
+  "receipt_hash": "sha256:89912c21624e29239e3c1eeab37de16e1e7a0289911199f6f5979b0e684d6bd4",
+  "anchor": {
+    "chain": "bsc-testnet",
+    "status": "anchored-batch",
+    "merkle_root": "eb2f04db960a198afd79c396fec40d86539e05c872f95bac5c9683e280e36ac7",
+    "leaf_index": 0,
+    "merkle_path": [
+      {
+        "sibling": "6e1ec225be0290d225179c08ee3e2dde33c99ffa0a579afa3fb5a9c952afa87c",
+        "leaf_was_left": true
+      }
+    ],
+    "tx": "0xb9be3c7f00c7f4090c6c696821d98c0a20317105508488362dfd35b7f9b52c95",
+    "block": 129648057,
+    "explorer": "https://testnet.bscscan.com/tx/0xb9be3c7f00c7f4090c6c696821d98c0a20317105508488362dfd35b7f9b52c95",
+    "anchored_at": "2026-09-07T13:35:42Z",
+    "storage": {
+      "network": "crust",
+      "cid": "QmX1s4CjQjKQ9Z6h3PcEhatsFpcjXUX6ZLT1chcByKGAA4",
+      "pinned": false,
+      "url": "https://crustipfs.xyz/ipfs/QmX1s4CjQjKQ9Z6h3PcEhatsFpcjXUX6ZLT1chcByKGAA4"
+    }
+  }
+}

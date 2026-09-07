@@ -72,6 +72,8 @@ def main():
                     help="input file whose hash is committed (repeatable)")
     ap.add_argument("--output", action="append", default=[],
                     help="output file to fingerprint after the run (repeatable)")
+    ap.add_argument("--parent", action="append", default=[],
+                    help="parent receipt whose output feeds this job's input")
     ap.add_argument("--provider", default="unknown",
                     help="network:instance:region label")
     ap.add_argument("--receipt", default=None, help="receipt path (default auto)")
@@ -89,6 +91,16 @@ def main():
 
     inputs = {p: sha256_file(p) for p in args.input}
 
+    # lineage: each declared parent must have produced one of our inputs
+    parents = []
+    for pp in args.parent:
+        pr = json.load(open(pp))
+        pouts = set(pr.get("output", {}).get("files", {}).values())
+        links = [{"file": f, "hash": h} for f, h in inputs.items() if h in pouts]
+        if not links:
+            sys.exit(f"--parent {pp}: no input of this job matches any output of that receipt")
+        parents.append({"parent_receipt_hash": pr["receipt_hash"], "links": links})
+
     started = datetime.now(timezone.utc).isoformat(timespec="seconds")
     t0 = time.time()
     proc = subprocess.run(cmd, capture_output=True)
@@ -97,7 +109,7 @@ def main():
     outputs = {p: sha256_file(p) for p in args.output if os.path.exists(p)}
 
     body = {
-        "schema": "aimeta.poc.v0.2",
+        "schema": "aimeta.poc.v0.3",
         "job": {"cmd": cmd, "inputs": inputs},
         "env": {
             "host": platform.node(),
@@ -118,6 +130,8 @@ def main():
         "provider": args.provider,
         "signer_pubkey": "ed25519:" + pub,
     }
+    if parents:
+        body["lineage"] = {"parents": parents}
     # signature and receipt_hash cover the body only — the anchor field is
     # post-hoc metadata and must never invalidate the signature
     sig = key.sign(canonical(body)).hex()
