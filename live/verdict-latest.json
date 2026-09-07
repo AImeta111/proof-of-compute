@@ -1,0 +1,65 @@
+{
+  "schema": "aimeta.poc.arbitration.v0",
+  "job": {
+    "cmd": [
+      "python3",
+      "agent_backtest_bench.py",
+      "--bars",
+      "500000",
+      "--grid",
+      "96",
+      "--hourly-usd",
+      "0.0064"
+    ],
+    "inputs": {
+      "agent_backtest_bench.py": "sha256:fc4b47bf23af73f26d0adefa688182b9d97b37d99554ff4d6daffc7ddc5df7c3"
+    }
+  },
+  "executors": [
+    {
+      "provider": "fluence:cpu-shared-2c-2g:FRA",
+      "signer": "ed25519:69975af374bef5cdf41c86fc44d7d5ec740bc6da83fa258d3c884158797ef18d",
+      "receipt_hash": "sha256:63b0f11fd2900a8b12d5b45e2e11ccae1944f24017c7faeef21038e897f528a2",
+      "env": "x86_64"
+    },
+    {
+      "provider": "local:apple-m-arm64:HKG",
+      "signer": "ed25519:771e3ff5f477945019461faa8fdee1d99abf8c890a49734230eca48d7a98bfff",
+      "receipt_hash": "sha256:84e133c92e5ee1398217cf1ff42df5828d2d88740d0f4e3d82ba2f2e438a5abe",
+      "env": "arm64"
+    }
+  ],
+  "independent_signers": true,
+  "outputs_identical": true,
+  "verdict": "CORROBORATED",
+  "arbitrated_at": "2026-09-07T12:44:41Z",
+  "arbiter_pubkey": "ed25519:feb7a36c1fe65eba8024d67428725ae7613b998b7577ee04b24a78cac060dc70",
+  "signature": "ed25519:59a4ac3fef0c5fb28c55b07b18855c81a6e11cd765e7e39ae108af750bd4237d69372a9b9ba5bdab83b07dcf00b91d2a3735f0f25c03a83e8277b4873dcd1908",
+  "receipt_hash": "sha256:efbf9374abbad04ffd2c4188f0aff78afa646daecd22c05fa16c5b25555785fb",
+  "anchor": {
+    "chain": "bsc-testnet",
+    "status": "anchored-batch",
+    "merkle_root": "b6d0fa81e9f02b556d53a75b01348d9e7e7480d9be3588477ec553e9268eacd4",
+    "leaf_index": 2,
+    "merkle_path": [
+      {
+        "sibling": "efbf9374abbad04ffd2c4188f0aff78afa646daecd22c05fa16c5b25555785fb",
+        "leaf_was_left": true
+      },
+      {
+        "sibling": "9431aff8c2117ffb7a627cf735a4737eb0afcaa05d3fbd79ec12d761b9201777",
+        "leaf_was_left": false
+      }
+    ],
+    "tx": "0x4c7ccb0c5122540bb07cad37ca35c8d2357db7cd02deba332699a7efe7bed097",
+    "block": 129641274,
+    "explorer": "https://testnet.bscscan.com/tx/0x4c7ccb0c5122540bb07cad37ca35c8d2357db7cd02deba332699a7efe7bed097",
+    "anchored_at": "2026-09-07T12:44:50Z",
+    "storage": {
+      "network": "crust",
+      "cid": "QmVGtWN3mzUiPrzpoVX8B357SSuePd8yw4RRJ4HR5y55r1",
+      "pinned": false,
+      "url": "https://crustipfs.xyz/ipfs/QmVGtWN3mzUiPrzpoVX8B357SSuePd8yw4RRJ4HR5y55r1"
+    }
+  }
+}
