@@ -46,7 +46,7 @@ def main():
 
     receipt = json.load(open(args.receipt))
     body = {k: v for k, v in receipt.items()
-            if k not in ("signature", "receipt_hash")}
+            if k not in ("signature", "receipt_hash", "anchor")}
 
     # 1. signature
     pub = bytes.fromhex(receipt["signer_pubkey"].split(":", 1)[1])
@@ -58,7 +58,7 @@ def main():
         sys.exit("✘ SIGNATURE INVALID — receipt was tampered with")
 
     # 2. integrity
-    check = {**body, "signature": receipt["signature"]}
+    check = {**body, "signature": receipt["signature"]}  # anchor excluded
     if sha256_bytes(canonical(check)) == receipt["receipt_hash"]:
         print("✔ receipt_hash consistent")
     else:

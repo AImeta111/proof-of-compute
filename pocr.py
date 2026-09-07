@@ -97,7 +97,7 @@ def main():
     outputs = {p: sha256_file(p) for p in args.output if os.path.exists(p)}
 
     body = {
-        "schema": "aimeta.poc.v0",
+        "schema": "aimeta.poc.v0.2",
         "job": {"cmd": cmd, "inputs": inputs},
         "env": {
             "host": platform.node(),
@@ -117,11 +117,13 @@ def main():
         },
         "provider": args.provider,
         "signer_pubkey": "ed25519:" + pub,
-        "anchor": {"chain": "bsc-testnet", "status": "pending"},
     }
+    # signature and receipt_hash cover the body only — the anchor field is
+    # post-hoc metadata and must never invalidate the signature
     sig = key.sign(canonical(body)).hex()
     receipt = {**body, "signature": "ed25519:" + sig}
     receipt["receipt_hash"] = sha256_bytes(canonical(receipt))
+    receipt["anchor"] = {"chain": "bsc-testnet", "status": "pending"}
 
     out = args.receipt or f"receipt-{int(t0)}.json"
     with open(out, "w") as f:

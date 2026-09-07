@@ -1,0 +1,53 @@
+{
+  "schema": "aimeta.poc.v0.2",
+  "job": {
+    "cmd": [
+      "sudo",
+      "docker",
+      "run",
+      "--rm",
+      "-v",
+      "/home/ubuntu:/w",
+      "-w",
+      "/w",
+      "python@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea",
+      "python",
+      "agent_backtest_bench.py",
+      "--bars",
+      "500000",
+      "--grid",
+      "96",
+      "--hourly-usd",
+      "0.0064"
+    ],
+    "inputs": {
+      "agent_backtest_bench.py": "sha256:fc4b47bf23af73f26d0adefa688182b9d97b37d99554ff4d6daffc7ddc5df7c3"
+    }
+  },
+  "env": {
+    "host": "fluence",
+    "machine": "x86_64",
+    "cpu_count": 2,
+    "os": "Linux 6.8.0-138-generic",
+    "python": "3.12.3"
+  },
+  "run": {
+    "started_at": "2026-09-07T12:48:29+00:00",
+    "wall_seconds": 83.406,
+    "exit_code": 0
+  },
+  "output": {
+    "files": {
+      "grid_results.json": "sha256:bb2f3cccfb7d469c601b457a9aece2dd715175e46b212eca51e2d7845a5c3e15"
+    },
+    "stdout": "sha256:e33c0d237bfe850290bbbe3cf133578c8e2bdb55b44e13b961b4245656b8bb05"
+  },
+  "provider": "fluence:cpu-shared-2c-2g:FRA",
+  "signer_pubkey": "ed25519:69975af374bef5cdf41c86fc44d7d5ec740bc6da83fa258d3c884158797ef18d",
+  "signature": "ed25519:cda719775a7055673a5e08279b81d52cd6e19b7cfef1f326aa525b94f45ac758bd5bbf96b3f2599abd73b906ccbe732f76b01e2f951becf6648483d737229503",
+  "receipt_hash": "sha256:094ff2badcf03a1691c0a0dbc27728d75a060eaed80aab1d002eace62136a3ab",
+  "anchor": {
+    "chain": "bsc-testnet",
+    "status": "pending"
+  }
+}

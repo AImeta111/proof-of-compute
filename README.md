@@ -71,6 +71,29 @@ example (synthetic OHLCV, 96-cell strategy grid — pure stdlib).
   anchored at [`0xfb5a…4108`](https://testnet.bscscan.com/tx/0xfb5a919b991a5fe7dd96a60c73ebeb9d8e618e7e1c2326863db81abf56044108)
   (block 129637842): compare the tx `data` field with `receipt_hash`.
 
+
+## v0.2 — shipped
+
+- **Merkle batch anchoring** (`pocbatch.py`) — thousands of receipts, one
+  on-chain tx; every receipt carries its inclusion proof. Live root:
+  [`0x4c7c…d097`](https://testnet.bscscan.com/tx/0x4c7ccb0c5122540bb07cad37ca35c8d2357db7cd02deba332699a7efe7bed097)
+- **Corroboration** (`pocarb.py`) — the same job executed by independent
+  parties, receipts cross-checked. Example verdict in `examples/`:
+  Fluence x86-64 and Apple arm64, independent keys, identical outputs →
+  **CORROBORATED**. Trusting the result no longer requires trusting any
+  single runner.
+- **Environment pinning** — jobs run against an exact image digest
+  (`python@sha256:…` inside the signed command), so "what code, in what
+  environment" is part of the receipt (`examples/receipt-vm-docker.json`).
+- **Storage on Crust** (`poccrust.py`) — receipts persisted to IPFS via
+  Crust W3Auth gateways, CID recorded in the receipt (network pinning
+  marked `pending` until confirmed — status is honest, like everything here).
+- **Receipt Explorer** — verify any receipt in the browser at
+  [aimeta.network/verify](https://aimeta.network/verify): signature,
+  integrity, anchor and CID, checked entirely client-side.
+- **Envelope fix** — `anchor` moved outside the signed body: post-hoc
+  anchoring metadata can never invalidate a signature (schema `v0.2`).
+
 ## License
 
 MIT — permissionless integration, like everything AIMETA ships.
