@@ -37,7 +37,11 @@
   "signer_pubkey": "ed25519:69975af374bef5cdf41c86fc44d7d5ec740bc6da83fa258d3c884158797ef18d",
   "anchor": {
     "chain": "bsc-testnet",
-    "status": "pending"
+    "status": "anchored",
+    "tx": "0xfb5a919b991a5fe7dd96a60c73ebeb9d8e618e7e1c2326863db81abf56044108",
+    "block": 129637842,
+    "explorer": "https://testnet.bscscan.com/tx/0xfb5a919b991a5fe7dd96a60c73ebeb9d8e618e7e1c2326863db81abf56044108",
+    "anchored_at": "2026-09-07T12:19:06Z"
   },
   "signature": "ed25519:bd7630eb6ec31173ea5d7a4cd596d122dc6d90689c59dd8c514a505e9f152b1d8e825b387d95429cd6ce2b76a01264bd67ca3eab91b3895f7f7a1341bb582e03",
   "receipt_hash": "sha256:08574d2df9b2c55217e4e51ca083db39d0357186a7007bbd2421b5bf502deb34"

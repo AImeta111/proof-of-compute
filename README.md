@@ -67,8 +67,9 @@ example (synthetic OHLCV, 96-cell strategy grid — pure stdlib).
   prove the runner itself was untampered. Hardware attestation (TEE) is
   the next layer of the AIMETA proof stack, not this repo.
 - `--replay` proves output identity for **deterministic** jobs only.
-- On-chain anchoring of receipt hashes (BSC) ships next; the receipt
-  schema already carries the `anchor` field.
+- Receipt hashes anchor on BSC testnet — the example receipt's hash is
+  anchored at [`0xfb5a…4108`](https://testnet.bscscan.com/tx/0xfb5a919b991a5fe7dd96a60c73ebeb9d8e618e7e1c2326863db81abf56044108)
+  (block 129637842): compare the tx `data` field with `receipt_hash`.
 
 ## License
 
