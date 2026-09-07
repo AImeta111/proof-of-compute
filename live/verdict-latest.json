@@ -23,41 +23,17 @@
       "env": "x86_64"
     },
     {
-      "provider": "local:apple-m-arm64:HKG",
-      "signer": "ed25519:771e3ff5f477945019461faa8fdee1d99abf8c890a49734230eca48d7a98bfff",
-      "receipt_hash": "sha256:84e133c92e5ee1398217cf1ff42df5828d2d88740d0f4e3d82ba2f2e438a5abe",
-      "env": "arm64"
+      "provider": "github-actions:ubuntu-latest:cloud",
+      "signer": "ed25519:94d2cab4146cde6f843fe1b24baef8640f9d577be4c6e34f910f1b285862c95f",
+      "receipt_hash": "sha256:65bdbbe4466e6624f7a5c92ac45c7ad9c98dbcc080619568f5e2e4b7c2c821e9",
+      "env": "x86_64"
     }
   ],
   "independent_signers": true,
   "outputs_identical": true,
   "verdict": "CORROBORATED",
-  "arbitrated_at": "2026-09-07T12:44:41Z",
-  "arbiter_pubkey": "ed25519:feb7a36c1fe65eba8024d67428725ae7613b998b7577ee04b24a78cac060dc70",
-  "signature": "ed25519:59a4ac3fef0c5fb28c55b07b18855c81a6e11cd765e7e39ae108af750bd4237d69372a9b9ba5bdab83b07dcf00b91d2a3735f0f25c03a83e8277b4873dcd1908",
-  "receipt_hash": "sha256:efbf9374abbad04ffd2c4188f0aff78afa646daecd22c05fa16c5b25555785fb",
-  "anchor": {
-    "chain": "bsc",
-    "status": "anchored-batch",
-    "merkle_root": "147dd4df7f33b2118c6e8279d6df6fb313cd77a1fa72d89e627e520693cba310",
-    "leaf_index": 2,
-    "merkle_path": [
-      {
-        "sibling": "89912c21624e29239e3c1eeab37de16e1e7a0289911199f6f5979b0e684d6bd4",
-        "leaf_was_left": true
-      },
-      {
-        "sibling": "9431aff8c2117ffb7a627cf735a4737eb0afcaa05d3fbd79ec12d761b9201777",
-        "leaf_was_left": false
-      },
-      {
-        "sibling": "1f2387db03c9b2ba8bbd6f67f22dda90125612d5c816fa59c927a2fff2bd3aba",
-        "leaf_was_left": true
-      }
-    ],
-    "tx": "0xf6613c7381183916065fdb5374175c3bac137fde2e78cb144617cca13f5e6d66",
-    "block": 120507301,
-    "explorer": "https://bscscan.com/tx/0xf6613c7381183916065fdb5374175c3bac137fde2e78cb144617cca13f5e6d66",
-    "anchored_at": "2026-09-07T14:41:09Z"
-  }
+  "arbitrated_at": "2026-09-07T21:34:57Z",
+  "arbiter_pubkey": "ed25519:ede2ef332d56d438e810536f8a383078e8cad295b21ec20af815deff60bb6c1f",
+  "signature": "ed25519:db968de1f603687ff429a414db9b01ceb59bae67b18b1863021ec39455572c5cdbca8e5b7e82b9fe90bbef08c39d93f2a8fb2452bf07f9d430f830876e696604",
+  "receipt_hash": "sha256:e4b5fb1d398103547243d2330aee03674312d46b78faaaf887bddf84000beb0a"
 }

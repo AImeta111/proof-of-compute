@@ -1,5 +1,5 @@
 {
-  "schema": "aimeta.poc.v0.2",
+  "schema": "aimeta.poc.v0.3",
   "job": {
     "cmd": [
       "python3",
@@ -23,20 +23,20 @@
     "python": "3.12.14"
   },
   "run": {
-    "started_at": "2026-09-07T13:18:03+00:00",
-    "wall_seconds": 19.322,
+    "started_at": "2026-09-07T21:34:44+00:00",
+    "wall_seconds": 13.49,
     "exit_code": 0
   },
   "output": {
     "files": {
       "grid_results.json": "sha256:bb2f3cccfb7d469c601b457a9aece2dd715175e46b212eca51e2d7845a5c3e15"
     },
-    "stdout": "sha256:15faac73a34d152800280153241436329d5ea094c0cc54fec01b186f4647ebfc"
+    "stdout": "sha256:72f367878190d552d8ccc606bbdf2a05640d1ee8756664975bbc253118080c03"
   },
   "provider": "github-actions:ubuntu-latest:cloud",
-  "signer_pubkey": "ed25519:08e5b306d6580d9df063c814db1eab8c1bbee391635abdbaae9d2a0467399a1e",
-  "signature": "ed25519:619d8dfb0e148400d9f8481a62900c785588356ddfa87ca1b637fa8e218f608bca12f715d84992f8ec5e195531f6e48db97739947d389363e71dc945b5708701",
-  "receipt_hash": "sha256:6e1ec225be0290d225179c08ee3e2dde33c99ffa0a579afa3fb5a9c952afa87c",
+  "signer_pubkey": "ed25519:94d2cab4146cde6f843fe1b24baef8640f9d577be4c6e34f910f1b285862c95f",
+  "signature": "ed25519:62915db3b80b743cc86132abf49d83bca3ca72a82f9e56a2b801aab910fd99213405e92eb1a06ebe49feb8366c4bb54202a08b8166b08487c4d7908de54c2f02",
+  "receipt_hash": "sha256:65bdbbe4466e6624f7a5c92ac45c7ad9c98dbcc080619568f5e2e4b7c2c821e9",
   "anchor": {
     "chain": "bsc-testnet",
     "status": "pending"
