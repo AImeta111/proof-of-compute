@@ -21,7 +21,7 @@ jobs:
             --output grid_results.json \
             --provider github-actions:ubuntu-latest:cloud \
             --receipt live/receipt-github-latest.json \
-            -- python3 agent_backtest_bench.py --bars 500000 --grid 96 --hourly-usd 0
+            -- python3 agent_backtest_bench.py --bars 500000 --grid 96 --hourly-usd 0.0064
       - name: arbitrate vs latest Fluence receipt
         run: |
           python pocarb.py live/receipt-fluence-latest.json live/receipt-github-latest.json \
