@@ -1,0 +1,44 @@
+{
+  "schema": "aimeta.poc.v0.2",
+  "job": {
+    "cmd": [
+      "python3",
+      "agent_backtest_bench.py",
+      "--bars",
+      "500000",
+      "--grid",
+      "96",
+      "--hourly-usd",
+      "0.0064"
+    ],
+    "inputs": {
+      "agent_backtest_bench.py": "sha256:fc4b47bf23af73f26d0adefa688182b9d97b37d99554ff4d6daffc7ddc5df7c3"
+    }
+  },
+  "env": {
+    "host": "runnervmejwal",
+    "machine": "x86_64",
+    "cpu_count": 4,
+    "os": "Linux 6.17.0-1022-azure",
+    "python": "3.12.14"
+  },
+  "run": {
+    "started_at": "2026-09-07T13:18:03+00:00",
+    "wall_seconds": 19.322,
+    "exit_code": 0
+  },
+  "output": {
+    "files": {
+      "grid_results.json": "sha256:bb2f3cccfb7d469c601b457a9aece2dd715175e46b212eca51e2d7845a5c3e15"
+    },
+    "stdout": "sha256:15faac73a34d152800280153241436329d5ea094c0cc54fec01b186f4647ebfc"
+  },
+  "provider": "github-actions:ubuntu-latest:cloud",
+  "signer_pubkey": "ed25519:08e5b306d6580d9df063c814db1eab8c1bbee391635abdbaae9d2a0467399a1e",
+  "signature": "ed25519:619d8dfb0e148400d9f8481a62900c785588356ddfa87ca1b637fa8e218f608bca12f715d84992f8ec5e195531f6e48db97739947d389363e71dc945b5708701",
+  "receipt_hash": "sha256:6e1ec225be0290d225179c08ee3e2dde33c99ffa0a579afa3fb5a9c952afa87c",
+  "anchor": {
+    "chain": "bsc-testnet",
+    "status": "pending"
+  }
+}
