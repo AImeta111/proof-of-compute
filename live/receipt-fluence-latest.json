@@ -38,9 +38,9 @@
   "signature": "ed25519:359bf840bf324424a2bb946b59cdd43501f2a821baaa401b29ceb2c90ed4836ccf438b18a1c3af780da835b69d0cc9456f9ed047e6420ecc0f5f23fef1a1040c",
   "receipt_hash": "sha256:63b0f11fd2900a8b12d5b45e2e11ccae1944f24017c7faeef21038e897f528a2",
   "anchor": {
-    "chain": "bsc-testnet",
+    "chain": "bsc",
     "status": "anchored-batch",
-    "merkle_root": "b6d0fa81e9f02b556d53a75b01348d9e7e7480d9be3588477ec553e9268eacd4",
+    "merkle_root": "147dd4df7f33b2118c6e8279d6df6fb313cd77a1fa72d89e627e520693cba310",
     "leaf_index": 0,
     "merkle_path": [
       {
@@ -48,19 +48,17 @@
         "leaf_was_left": true
       },
       {
-        "sibling": "e45687b9a279ead39360a9f91e1826d6e31c88654ade9b68a77b144c55141b27",
+        "sibling": "ca57c6bddea777128532dc8c18a8c8ce0a8e0c7c886c124ec8108c35bd1dc104",
+        "leaf_was_left": true
+      },
+      {
+        "sibling": "1f2387db03c9b2ba8bbd6f67f22dda90125612d5c816fa59c927a2fff2bd3aba",
         "leaf_was_left": true
       }
     ],
-    "tx": "0x4c7ccb0c5122540bb07cad37ca35c8d2357db7cd02deba332699a7efe7bed097",
-    "block": 129641274,
-    "explorer": "https://testnet.bscscan.com/tx/0x4c7ccb0c5122540bb07cad37ca35c8d2357db7cd02deba332699a7efe7bed097",
-    "anchored_at": "2026-09-07T12:44:50Z",
-    "storage": {
-      "network": "crust",
-      "cid": "QmSH4JNB4boD8Niv3DCaW43wLmvan9fdh9DKqS82pD9aHh",
-      "pinned": false,
-      "url": "https://crustipfs.xyz/ipfs/QmSH4JNB4boD8Niv3DCaW43wLmvan9fdh9DKqS82pD9aHh"
-    }
+    "tx": "0xf6613c7381183916065fdb5374175c3bac137fde2e78cb144617cca13f5e6d66",
+    "block": 120507301,
+    "explorer": "https://bscscan.com/tx/0xf6613c7381183916065fdb5374175c3bac137fde2e78cb144617cca13f5e6d66",
+    "anchored_at": "2026-09-07T14:41:09Z"
   }
 }

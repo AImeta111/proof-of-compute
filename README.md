@@ -1,4 +1,8 @@
-# AIMETA · Proof of Compute (v0)
+# AIMETA · Proof of Compute
+
+![ci](https://github.com/AImeta111/proof-of-compute/actions/workflows/ci.yml/badge.svg)
+![live](https://img.shields.io/badge/live-aimeta.network%2Flive-59F3D2)
+![anchored](https://img.shields.io/badge/anchored-BSC%20mainnet-F0B90B)
 
 **Signed, independently verifiable receipts for compute jobs.**
 Part of the [AIMETA](https://aimeta.network) verifiable AI-agent network — this is the smallest real slice of our Proof-of-Compute layer, running today on decentralized compute.
@@ -68,8 +72,8 @@ example (synthetic OHLCV, 96-cell strategy grid — pure stdlib).
   the next layer of the AIMETA proof stack, not this repo.
 - `--replay` proves output identity for **deterministic** jobs only.
 - Receipt hashes anchor on BSC testnet — the example receipt's hash is
-  anchored at [`0xfb5a…4108`](https://testnet.bscscan.com/tx/0xfb5a919b991a5fe7dd96a60c73ebeb9d8e618e7e1c2326863db81abf56044108)
-  (block 129637842): compare the tx `data` field with `receipt_hash`.
+  anchored on **BSC mainnet** at [`0xf6613c…6d66`](https://bscscan.com/tx/0xf6613c7381183916065fdb5374175c3bac137fde2e78cb144617cca13f5e6d66)
+  (block 120507301, merkle batch of five): fold the inclusion proof and compare with the tx `data` field. Format: [SPEC.md](SPEC.md).
 
 
 ## v0.2 — shipped
@@ -111,6 +115,18 @@ example (synthetic OHLCV, 96-cell strategy grid — pure stdlib).
 - **Continuous audit** — a scheduled workflow re-verifies every live receipt
   (signature, integrity, replay where runnable) and publishes
   `live/audit-latest.json`. The system spot-checks itself in public.
+
+
+## v0.9 — release candidate
+
+- **Installable**: `pip install git+https://github.com/AImeta111/proof-of-compute`
+  → `pocr / pocv / pocarb / pocbatch` CLIs
+- **Receipt format specification**: [SPEC.md](SPEC.md) — envelope,
+  canonicalization, lineage, corroboration, merkle anchoring
+- **Test suite + CI**: tamper-detection, envelope invariants, lineage
+  linkage, merkle proofs — green on 3.10/3.12
+- **Mainnet anchoring**: `AIMETA_CHAIN=mainnet` — five receipts anchored in
+  one BSC-mainnet tx for ≈$0.001
 
 ## License
 

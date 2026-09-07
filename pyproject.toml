@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aimeta-poc"
+version = "0.9.0"
+description = "AIMETA Proof of Compute — signed, verifiable receipts for compute jobs (hermetic execution, lineage, corroboration, on-chain anchoring)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["cryptography>=42"]
+
+[project.optional-dependencies]
+chain = ["web3>=6", "eth-account>=0.11"]
+
+[project.urls]
+Homepage = "https://aimeta.network"
+Source = "https://github.com/AImeta111/proof-of-compute"
+Live = "https://aimeta.network/live"
+
+[project.scripts]
+pocr = "aimeta_poc.pocr:main"
+pocv = "aimeta_poc.pocv:main"
+pocarb = "aimeta_poc.pocarb:main"
+pocbatch = "aimeta_poc.pocbatch:main"
+
+[tool.setuptools]
+packages = ["aimeta_poc"]

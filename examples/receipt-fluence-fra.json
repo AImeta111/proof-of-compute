@@ -1,5 +1,5 @@
 {
-  "schema": "aimeta.poc.v0",
+  "schema": "aimeta.poc.v0.2",
   "job": {
     "cmd": [
       "python3",
@@ -23,26 +23,42 @@
     "python": "3.12.3"
   },
   "run": {
-    "started_at": "2026-09-07T08:49:09+00:00",
-    "wall_seconds": 14.367,
+    "started_at": "2026-09-07T12:42:46+00:00",
+    "wall_seconds": 68.516,
     "exit_code": 0
   },
   "output": {
     "files": {
       "grid_results.json": "sha256:bb2f3cccfb7d469c601b457a9aece2dd715175e46b212eca51e2d7845a5c3e15"
     },
-    "stdout": "sha256:c4211c28c8ab15f99a49e747e004aa0c70b60741dfae48ba3398c308710ebd5b"
+    "stdout": "sha256:71af27ac11782af3e18db77173cee6b568ee1bb9dd460bf2a7163e590a498f2f"
   },
   "provider": "fluence:cpu-shared-2c-2g:FRA",
   "signer_pubkey": "ed25519:69975af374bef5cdf41c86fc44d7d5ec740bc6da83fa258d3c884158797ef18d",
+  "signature": "ed25519:359bf840bf324424a2bb946b59cdd43501f2a821baaa401b29ceb2c90ed4836ccf438b18a1c3af780da835b69d0cc9456f9ed047e6420ecc0f5f23fef1a1040c",
+  "receipt_hash": "sha256:63b0f11fd2900a8b12d5b45e2e11ccae1944f24017c7faeef21038e897f528a2",
   "anchor": {
-    "chain": "bsc-testnet",
-    "status": "anchored",
-    "tx": "0xfb5a919b991a5fe7dd96a60c73ebeb9d8e618e7e1c2326863db81abf56044108",
-    "block": 129637842,
-    "explorer": "https://testnet.bscscan.com/tx/0xfb5a919b991a5fe7dd96a60c73ebeb9d8e618e7e1c2326863db81abf56044108",
-    "anchored_at": "2026-09-07T12:19:06Z"
-  },
-  "signature": "ed25519:bd7630eb6ec31173ea5d7a4cd596d122dc6d90689c59dd8c514a505e9f152b1d8e825b387d95429cd6ce2b76a01264bd67ca3eab91b3895f7f7a1341bb582e03",
-  "receipt_hash": "sha256:08574d2df9b2c55217e4e51ca083db39d0357186a7007bbd2421b5bf502deb34"
+    "chain": "bsc",
+    "status": "anchored-batch",
+    "merkle_root": "147dd4df7f33b2118c6e8279d6df6fb313cd77a1fa72d89e627e520693cba310",
+    "leaf_index": 0,
+    "merkle_path": [
+      {
+        "sibling": "84e133c92e5ee1398217cf1ff42df5828d2d88740d0f4e3d82ba2f2e438a5abe",
+        "leaf_was_left": true
+      },
+      {
+        "sibling": "ca57c6bddea777128532dc8c18a8c8ce0a8e0c7c886c124ec8108c35bd1dc104",
+        "leaf_was_left": true
+      },
+      {
+        "sibling": "1f2387db03c9b2ba8bbd6f67f22dda90125612d5c816fa59c927a2fff2bd3aba",
+        "leaf_was_left": true
+      }
+    ],
+    "tx": "0xf6613c7381183916065fdb5374175c3bac137fde2e78cb144617cca13f5e6d66",
+    "block": 120507301,
+    "explorer": "https://bscscan.com/tx/0xf6613c7381183916065fdb5374175c3bac137fde2e78cb144617cca13f5e6d66",
+    "anchored_at": "2026-09-07T14:41:09Z"
+  }
 }
