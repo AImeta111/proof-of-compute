@@ -24,16 +24,16 @@
     },
     {
       "provider": "github-actions:ubuntu-latest:cloud",
-      "signer": "ed25519:a4a0241db07d457b6a4b31e9b7f84a0ec679f6411b7b0a06ee80b2ac26355dcc",
-      "receipt_hash": "sha256:74ca2ac210120354ad813d16f14c915af1fad70d54cc597b881a50f0c3618617",
+      "signer": "ed25519:95c19841b500284132a9d41e445048bf94d09a820fe7a495194e1874cf5a7cbd",
+      "receipt_hash": "sha256:881ab7221008b03f5b8423b574bd8e519350fbadc58cc2345802c896ad38e9fa",
       "env": "x86_64"
     }
   ],
   "independent_signers": true,
   "outputs_identical": true,
   "verdict": "CORROBORATED",
-  "arbitrated_at": "2026-10-09T18:24:30Z",
-  "arbiter_pubkey": "ed25519:233d60a5ba8968348264f2361962b53b58204439959b58fab245d8e6cf43dea9",
-  "signature": "ed25519:a3bc35f2ac3de2b4cc473dcfd2c6383a4229ba3cc29929a0541b95a3b1ba59842562123623db9562fcf7565492d3f687ed8717812ce61bad6073375f0c023d09",
-  "receipt_hash": "sha256:d29d418d17bb8c5a6d6e001af76cb941a5c2afb1e47172036aacd9a7ff1fdd99"
+  "arbitrated_at": "2026-10-10T06:00:30Z",
+  "arbiter_pubkey": "ed25519:4007cdc42b9153c2908ef85b289701b19b3ec2a10bd13aef097c6848c00b173f",
+  "signature": "ed25519:1ab03596c2110eb3de73f4b56e898e322aab4ab559378486d806a533e65992946dfd438d18cc4d0c2ccbe695ed4f5524bea8e692d3692254a9891ea09cb33802",
+  "receipt_hash": "sha256:fdb1397666061d5c79cc4500be34b5ff32f84fa4cd301af4fa82953fb470aaaa"
 }
