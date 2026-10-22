@@ -23,20 +23,20 @@
     "python": "3.12.15"
   },
   "run": {
-    "started_at": "2026-10-21T21:47:42+00:00",
-    "wall_seconds": 10.577,
+    "started_at": "2026-10-22T04:58:30+00:00",
+    "wall_seconds": 19.168,
     "exit_code": 0
   },
   "output": {
     "files": {
       "grid_results.json": "sha256:bb2f3cccfb7d469c601b457a9aece2dd715175e46b212eca51e2d7845a5c3e15"
     },
-    "stdout": "sha256:b83c2ad1eed086f7d8bafe2d538cec8143799fc649c0d297d288bbfdc91e4845"
+    "stdout": "sha256:28248656980565095a328fc536cd57c6823acb72c2a328f1acdc7ec829c973f0"
   },
   "provider": "github-actions:ubuntu-latest:cloud",
-  "signer_pubkey": "ed25519:9fc270eb41c69fa2ff8daa47e74f06b82dcdc0ab189eb9450b4ba2f53d55f246",
-  "signature": "ed25519:6a600bd3ae78e6333c31217756fcc1883e6feca8560b276a561e499a221f19a7324dc15d5f86ca8e3f66aef320fb7052b40919fd4bcd59db2cfabc78f028d80a",
-  "receipt_hash": "sha256:612c11de9f5f1d578316685b66d5f2c45ecc9b24e7c25d1c3d6fa3f56d9365fc",
+  "signer_pubkey": "ed25519:3b4e7da242c5a5b24894a2a461704618d0192c0cae0bb4abab959c4cc86eeb7d",
+  "signature": "ed25519:405aaab6673bd2e0bd6867f80f2091783d09f29be47529adf9c36b058c5dfe9cb8163d354359717df088e4bad11b1d0e3f8d2dfe41a591c3b04ba43f78bd230b",
+  "receipt_hash": "sha256:67aa10b03510b33641b6c8432b7a7db491a5245a3069281bf3c7f98a558c2f11",
   "anchor": {
     "chain": "bsc-testnet",
     "status": "pending"
