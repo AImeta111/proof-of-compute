@@ -16,27 +16,27 @@
     }
   },
   "env": {
-    "host": "runnervm48cm3",
+    "host": "runnervm7aw5e",
     "machine": "x86_64",
     "cpu_count": 4,
     "os": "Linux 7.0.0-1017-azure",
-    "python": "3.12.15"
+    "python": "3.12.16"
   },
   "run": {
-    "started_at": "2026-11-04T19:51:06+00:00",
-    "wall_seconds": 10.65,
+    "started_at": "2026-11-05T06:56:59+00:00",
+    "wall_seconds": 19.309,
     "exit_code": 0
   },
   "output": {
     "files": {
       "grid_results.json": "sha256:bb2f3cccfb7d469c601b457a9aece2dd715175e46b212eca51e2d7845a5c3e15"
     },
-    "stdout": "sha256:dd732cc2726cec8940a6b239bf23ab84600c81967f57ac37bbcdfd114a4fb1bf"
+    "stdout": "sha256:20d5f25deb1179fd9fdf47e2f7dea2d25d581ebc3589217c053d45a2b2117792"
   },
   "provider": "github-actions:ubuntu-latest:cloud",
-  "signer_pubkey": "ed25519:26eb22d3517bea43c20e907f0bd974a46fdb76bf3306d03cbb2470afd67ff9ef",
-  "signature": "ed25519:e763d28b5a534175fb209738f3ea18011d513cb322dfcaccdf7cf2ebccc2598afcb74ef6da9bfcd2d3023cda42934cd4d45020527fff8a2f4fe3ead0ff067105",
-  "receipt_hash": "sha256:637cff1b82503b38809150a1d16fd3b6ee009bdbf151ec3cdefffd60dbb22c0a",
+  "signer_pubkey": "ed25519:943bb90faf308826e47b75778f7c812c867619c232b71c2ce987c7d97b3f3af2",
+  "signature": "ed25519:700c49081966e62cf24d649de67c0a436b31797fccba13c962aceab49b1f3e05b9e03814b10799e5801aa1eccf655de1719dbd67f426b6a1f1e4dffa58732e04",
+  "receipt_hash": "sha256:8cdf40283ecaa90557604ab8bd1adae7fe42d363cc1bdde144ac4caefa88ae23",
   "anchor": {
     "chain": "bsc-testnet",
     "status": "pending"
