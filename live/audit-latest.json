@@ -1,6 +1,6 @@
 {
  "schema": "aimeta.poc.audit.v0",
- "audited_at": "2026-11-26T11:31:17Z",
+ "audited_at": "2026-11-26T23:21:39Z",
  "auditor": "github-actions:continuous-audit",
  "results": [
   {
